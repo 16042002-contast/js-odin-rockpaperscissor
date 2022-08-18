@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log('✂️');
+        // console.log('🪨');
+        // console.log('🧻');
+
+
+        // ROCK PAPER SCISSORS GAME
+
+        //there will be five rounds for a game
+        //round1->when user inputs (rock,paper scissors)make input case-insensitive
+        //computer will generate any of (rock,paper,scissors)randomly
+        //make them compare
+        //we have to check who overpower another
+        //and output who wins that round
+        //keep a count who wins that round
+        //same for other 4 rounds
+        //at the end output who wins the game
+
+
+        //to keep a count making variables global
+        let computerWin = 0;
+        let playerWin = 0;
+
+        //5 rounds to be played
+        let game = function() {
+            for (let i = 1; i <= 5; i++) {
+                //taking input from user
+                // making user input case-insensitive
+                let playerSelection = prompt(`select rock paper scissors(✂️,🪨,🧻) round ${i}`).toLowerCase();
+                let computerSelection = getComputerChoice();
+                console.log(`computer chose ${computerSelection}`);
+                console.log(playRound(playerSelection,computerSelection));
+                }
+                // console.log(playerWin);
+                // console.log(computerWin);
+            //checking who wins the game
+            if(playerWin>computerWin){
+                console.log(`congrats ,you won with ${playerWin} points`);
+            }
+            else if(playerWin<computerWin){
+                console.log(`sorry , you lost the game by ${computerWin - playerWin} points`);
+            }
+            else{
+                console.log('you tied the game');
+            }
+        };
+
+        //function that makes computer generates rock paper scissors randomly
+        let getComputerChoice = ()=>{
+            let choiceIndex = Math.ceil(Math.random()*3);//formula to return number amoung 1,2,3
+            if(choiceIndex==1){
+                return 'scissors';
+            }
+            else if(choiceIndex==2){
+                return 'rock';
+            }
+            else{
+                return 'paper';
+            }
+        };
+
+
+        //function to check who wins that round
+        let playRound = (playerSelection,computerSelection)=>{
+            if((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper') ){
+                playerWin++;
+                return `you won ${playerSelection} beats ${computerSelection}`;
+            }
+            else if((computerSelection == 'rock' && playerSelection == 'scissors') || (computerSelection == 'paper' && playerSelection == 'rock') || (computerSelection == 'scissors' && playerSelection == 'paper') ){
+                computerWin++;
+                return `you lose ${computerSelection} beats ${playerSelection}`;
+
+            }
+            else{
+                return 'this round ties!';
+            }
+        };
+
+         game();
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
