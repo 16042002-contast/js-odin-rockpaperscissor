@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+/* font-family: 'Luckiest Guy', cursive; */
+/* font-family: 'Kanit', sans-serif; */
+
+body{
+    background-image: url('images/backgound.jpg');
+    background-origin: content-box;
+    background-size: auto;
+}
+ 
+*{
+    border: 2px solid white;
+}  
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    
+}
+
+.game-name,
+.game-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family:'Kanit', sans-serif ;
+    font-size: 22px;
+}
+
+.game-name{
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 40px;
+}
+
+.start-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+#start{
+    padding: 15px 25px;
+    background-color: rgb(1, 141, 1);
+    color: white;
+    font-family:'Kanit', sans-serif ;
+    font-size: larger;
+    border: none;
+    border-radius: 10px;
+}
+
+#start:hover{
+    background-color: white;
+    color:rgb(1, 141, 1) ;
+}
+
+.playing-btns{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+
+}
+
+.play-btn{
+    border: 5px solid yellow;
+    border-radius: 40px;
+    padding: 70px ;
+    display: flex;
+
+}
+
+.play-btn img{
+    width: 150px;
+    height: 200px;
+}
+
+.play-btn:hover{
+    border: none;
+    background-color: yellow;
+}
+
+

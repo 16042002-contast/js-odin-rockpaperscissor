@@ -5,8 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="rps.css">
 </head>
 <body>
+
+    <!-- planning ui  -->
+    <!-- heading for the game -->
+    <!-- button to start the game -->
+    <!-- show 3 buttons -->
+    <!-- after each rounf show user the result in div -->
+    <!-- at last conclude the result -->
+    <div class="container">
+        <div class="head">
+           <div class="game-head">WELCOME TO THE GAME OF LUCK!</div> 
+            <div class="game-name">The Rock, Paper and Scissors</div>
+        </div>
+
+        <div class="start-btn"><button id="start">Let's Play The</button></div>
+
+        <div class="playing-btns">
+            <div class="play-btn"><img src="images/scissor.png" alt="scissor"></div>
+            <div class="play-btn"><img src="images/rock.png" alt="rock"></div>
+            <div class="play-btn"><img src="images/paper.png" alt="paper"></div>
+        </div>
+
+        <div class="results-section">
+            <div class="player-section">
+                <div class="player-show">Your Score</div>
+                <div class="playe-score"></div>
+            </div>
+            <div class="computer-section">
+                <div class="computer-show">Opponent Score</div>
+                <div class="computer-score"></div>
+            </div>
+        </div> 
+
+             <div class="end-result"></div>
+        
+    </div>
     <script>
         // console.log('✂️');
         // console.log('🪨');
@@ -56,7 +92,7 @@
 
         //function that makes computer generates rock paper scissors randomly
         let getComputerChoice = ()=>{
-            let choiceIndex = Math.ceil(Math.random()*3);//formula to return number amoung 1,2,3
+            let choiceIndex = Math.ceil(Math.random()*3);//formula to return number among 1,2,3
             if(choiceIndex==1){
                 return 'scissors';
             }
@@ -85,7 +121,25 @@
             }
         };
 
-        game();
+        // game();
+
+        //add ui dont take input from prompt box
+        //  remove the logic that plays 5 rounds
+        //create 3 buttons one for each selection
+
+
+        //event handler to start button
+
+        function createScoreColumn() {
+
+            
+            
+            
+        }
+
+        let startButton = document.querySelector('#start');
+        startButton.addEventListener('click',createScoreColumn);
+
 
 
 
