@@ -21,26 +21,26 @@
             <div class="game-name">The Rock, Paper and Scissors</div>
         </div>
 
-        <div class="start-btn"><button id="start">Let's Play The</button></div>
+        <div class="start-btn"><button id="start">Let's Play The Game</button></div>
 
         <div class="playing-btns">
-            <div class="play-btn"><img src="images/scissor.png" alt="scissor"></div>
-            <div class="play-btn"><img src="images/rock.png" alt="rock"></div>
-            <div class="play-btn"><img src="images/paper.png" alt="paper"></div>
+            <div class="play-btn" id="scissors" ><img src="images/scissor.png" alt="scissor"></div>
+            <div class="play-btn" id="rock"><img src="images/rock.png" alt="rock"></div>
+            <div class="play-btn" id="paper"><img src="images/paper.png" alt="paper"></div>
         </div>
 
         <div class="results-section">
-            <div class="player-section">
-                <div class="player-show">Your Score</div>
-                <div class="playe-score"></div>
+            <div class="section">
+                <div class="show">Your Score</div>
+                <div class="score"></div>
             </div>
-            <div class="computer-section">
-                <div class="computer-show">Opponent Score</div>
-                <div class="computer-score"></div>
+            <div class="section">
+                <div class="show">Opponent Score</div>
+                <div class="score"></div>
             </div>
         </div> 
 
-             <div class="end-result"></div>
+             <!-- <div class="end-result"></div> -->
         
     </div>
     <script>
@@ -67,11 +67,24 @@
         let playerWin = 0;
 
         //5 rounds to be played
-        let game = function() {
+        let game = function(divComment) {
             for (let i = 1; i <= 5; i++) {
                 //taking input from user
                 // making user input case-insensitive
-                let playerSelection = prompt(`select rock paper scissors(✂️,🪨,🧻) round ${i}`).toLowerCase();
+
+                
+                // let playerSelection = prompt(`select rock paper scissors(✂️,🪨,🧻) round ${i}`).toLowerCase();
+                let playerSelection = document.querySelectorAll('div.play-btn');
+                playerSelection.forEach(btn => {
+                    btn.addEventListener('click',(e)=>{
+                        let player = e.target.id;
+                        if(player == 'scissors' || player == 'rock' || player == 'paper'){
+                            divComment.textContent = `you chose ${player}`;
+                        }
+                    });
+                    
+                });
+               
                 let computerSelection = getComputerChoice();
                 console.log(`computer chose ${computerSelection}`);
                 console.log(playRound(playerSelection,computerSelection));
@@ -130,15 +143,30 @@
 
         //event handler to start button
 
-        function createScoreColumn() {
-
+        let container = document.querySelector('.container');
+        function createColumn() {
+            let divComment = document.createElement('div');
+            divComment.classList.add('resultComment');
+            divComment.style.color = 'white';
+            divComment.style.fontSize = '34px';
+            divComment.style.fontFamily = "'Luckiest Guy', cursive";
+            divComment.style.display = 'flex';
+            divComment.style.justifyContent = 'center'
+            divComment.style.marginTop = '100px';
+            divComment.style.textAlign = 'center';
+            divComment.innerHTML = 'Game Start -> you turn choose! <br> There will be 5 rounds';
+            container.appendChild(divComment);
+            game(divComment);
+            
             
             
             
         }
 
         let startButton = document.querySelector('#start');
-        startButton.addEventListener('click',createScoreColumn);
+        startButton.addEventListener('click',createColumn);
+        
+
 
 
 

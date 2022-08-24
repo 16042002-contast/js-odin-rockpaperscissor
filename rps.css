@@ -10,9 +10,9 @@ body{
     background-size: auto;
 }
  
-*{
+/* *{
     border: 2px solid white;
-}  
+}    */
 
 .container{
     display: flex;
@@ -92,4 +92,31 @@ body{
     background-color: yellow;
 }
 
+
+.results-section{
+    display: flex;
+}
+
+.section{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.section .show{
+    font-family:'Kanit', sans-serif ;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+}
+
+.section .score{
+    border: 2px solid yellow;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
 
