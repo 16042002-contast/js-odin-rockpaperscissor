@@ -5,7 +5,7 @@
 /* font-family: 'Kanit', sans-serif; */
 
 body{
-    background-image: url('images/backgound.jpg');
+    background-image: url('images/background.jpg');
     background-origin: content-box;
     background-size: auto;
 }
@@ -97,7 +97,8 @@ body{
     display: flex;
 }
 
-.section{
+.computer-section,
+.player-section{
     flex: 1;
     display: flex;
     justify-content: center;
@@ -105,18 +106,23 @@ body{
     
 }
 
-.section .show{
+.show{
     font-family:'Kanit', sans-serif ;
     font-weight: bold;
     color: white;
     font-size: 22px;
 }
 
-.section .score{
+.score{
     border: 2px solid yellow;
     width: 100px;
     display: flex;
     justify-content: center;
     color: white;
+    align-items: center;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: 'Kanit', sans-serif;
+    
 }
 
